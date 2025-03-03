@@ -1,5 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        Data a = new Data;
+        Data a = new Data();
+        a.repopulate();
+        System.out.println(a.countIncreasingCols());
     }
 }
