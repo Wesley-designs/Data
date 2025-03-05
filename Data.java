@@ -8,20 +8,44 @@ private int[][] grid;
 */
 public void repopulate()
 {
-    int hori = (int)Math.random()*10;
-    int vert = (int)Math.random()*10;
+    int hori = (int)(Math.random()*10)+1; //row
+    int vert = (int)(Math.random()*10)+1; //col
     grid = new int[hori][vert];
 
-    for (int i=0; i<vert; i++) {
-        for (int o=0; i<hori; i++) {
+    for (int i=0; i<hori; i++) {
+        for (int o=0; o<vert; o++) {
             int randnum = 100;
             while ((randnum%100 == 0) || (randnum%10!=0)) {
-                randnum = (int)((Math.random()*10)*(Math.random()*10)*10);
+                randnum = ((int)((Math.random()*10)*(Math.random()*10)))*10;
             }
             grid[i][o] = randnum;
         }
     }
 }
+
+public String get2D()
+{
+    String a = "";
+    for (int[] x : grid) {
+        for (int y : x) {
+            a+=" " + y;
+        }
+        a+=" |";
+    }
+    return a;
+}
+
+public String toString()
+{
+    String s = "";
+    for (int[] row : grid)
+    {
+        for (int col : row) s += col + " ";
+        s += "\n";
+    }
+    return s;
+}
+
 /** Returns the number of columns in grid that are in increasing order, as described
 * in part (b)
 * Precondition: grid is not null.
@@ -33,7 +57,7 @@ public int countIncreasingCols()
     int h = grid.length;
     int y = grid[0].length;
     for (int i=0; i<h-1; i++) {
-        for (int o=0; i<v; i++) {
+        for (int o=0; i<y; i++) {
             if (grid[i][o]>=grid[i+1][o]) {
                 count++;
             }
