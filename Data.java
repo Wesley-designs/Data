@@ -57,10 +57,13 @@ public int countIncreasingCols()
     int h = grid.length;
     int y = grid[0].length;
     for (int i=0; i<h-1; i++) {
-        for (int o=0; i<y; i++) {
+        int subcount = 0;
+        for (int o=0; o<y; o++) {
             if (grid[i][o]>=grid[i+1][o]) {
-                count++;
+                subcount++;
             }
+
+            if ()
         }
     }
     return count;

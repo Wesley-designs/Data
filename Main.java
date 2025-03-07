@@ -4,6 +4,6 @@ public class Main {
         a.repopulate();
         System.out.println(a.get2D());
         System.out.println(a);
-        //System.out.println(a.countIncreasingCols());
+        System.out.println(a.countIncreasingCols());
     }
 }
