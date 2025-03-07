@@ -62,8 +62,9 @@ public int countIncreasingCols()
             if (grid[i][o]>=grid[i+1][o]) {
                 subcount++;
             }
-
-            if ()
+        }
+        if (subcount == h-1) {
+            count++;
         }
     }
     return count;
